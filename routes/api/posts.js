@@ -180,11 +180,6 @@ router.delete('/comment/:id/:comment_id', passport.authenticate('jwt', {session:
       // Save
       post.save().then(post => res.json(post));
 
-    // Add to comments
-    post.comments.unshift(newComment);
-
-    //Save
-    post.save().then(post => {res.json(post)})
     })
     .catch(err => res.status(404).json({ postNotFound: 'No posts found'}))
 });
