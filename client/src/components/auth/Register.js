@@ -40,17 +40,9 @@ class Register extends Component {
       password2: formData.password2.value
     }
 
-    let newUser = {
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-      password2: this.state.password2
-    }
-    console.log(body)
-
     axios.post('http://localhost:4000/api/users/register', body)
       .then(res => console.log(res.data))
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ errors: err.response.data}))
 
     console.log(axios)
     // console.log(newUser)
@@ -76,7 +68,7 @@ class Register extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Sign Up</h1>
               <p className="lead text-center">Create your DevConnector account</p>
-              <form onSubmit={this.onSubmit} method="POST">
+              <form noValidate onSubmit={this.onSubmit} method="POST">
                 <div className="form-group">
                   <input type="text" className={classnames('form-control form-control-lg', {
                     'is-invalid': errors.name
