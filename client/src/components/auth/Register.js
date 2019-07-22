@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
+import axios from 'axios';
 
 class Register extends Component {
   constructor(){
@@ -30,16 +32,39 @@ class Register extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    let formData = e.target;
+    let body = {
+      name: formData.name.value,
+      email: formData.email.value,
+      password: formData.password.value,
+      password2: formData.password2.value
+    }
 
-    const newUser = {
+    let newUser = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
     }
+    console.log(body)
 
-    this.props.registerUser(newUser)
+    axios.post('http://localhost:4000/api/users/register', body)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err))
+
+    console.log(axios)
+    // console.log(newUser)
+
+    // this.props.registerUser(newUser, this.props.history);
   }
+
+  // componentDidMount(){
+  //   const helloFromApi = axios
+  //     .get('/api/users/register')
+  //     .then(res => res.data);
+
+  //   console.log(helloFromApi)
+  // }
 
   render() {
     const { errors } = this.state;
@@ -51,7 +76,7 @@ class Register extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Sign Up</h1>
               <p className="lead text-center">Create your DevConnector account</p>
-              <form onSubmit={this.onSubmit}>
+              <form onSubmit={this.onSubmit} method="POST">
                 <div className="form-group">
                   <input type="text" className={classnames('form-control form-control-lg', {
                     'is-invalid': errors.name
@@ -104,4 +129,4 @@ const mapStateToProps = (state) => ({
   errors: state.errors
 })
 
-export default connect(mapStateToProps, { registerUser })(Register);
+export default connect(mapStateToProps, { registerUser })(withRouter(Register));
