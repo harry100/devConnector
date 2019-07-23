@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
-import axios from 'axios';
+// import axios from 'axios';
 
 class Register extends Component {
   constructor(){
@@ -22,6 +22,7 @@ class Register extends Component {
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.errors) {
+      console.log(nextProps)
       this.setState({ errors: nextProps.errors })
     }
   }
@@ -40,11 +41,12 @@ class Register extends Component {
       password2: formData.password2.value
     }
 
-    axios.post('http://localhost:4000/api/users/register', body)
-      .then(res => console.log(res.data))
-      .catch(err => this.setState({ errors: err.response.data}))
+    // axios.post('http://localhost:4000/api/users/register', body)
+    //   .then(res => console.log(res.data))
+    //   .catch(err => this.setState({ errors: err.response.data}))
 
-    console.log(axios)
+    this.props.registerUser(body, this.props.history);
+
     // console.log(newUser)
 
     // this.props.registerUser(newUser, this.props.history);

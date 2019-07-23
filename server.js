@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+var cors = require('cors')
 
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
@@ -9,9 +10,16 @@ const posts = require('./routes/api/posts');
 
 const app = express();
 
+var corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions));
+
 //Body parse middleware
 app.use(bodyParser.urlencoded({extended: false}));
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 //DB config
 const db = require('./config/keys').mongoURI;
