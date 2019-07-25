@@ -17,6 +17,7 @@ class Login extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
     if (nextProps.auth.isAuthenticated){
       this.props.history.push('/dashboard');
     }
@@ -41,7 +42,7 @@ class Login extends Component {
   }
 
   render() {
-    const {errors} = this.state
+    const {errors} = this.state;
     return (
       <div className="login">
         <div className="container">
