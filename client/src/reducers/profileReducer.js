@@ -2,7 +2,7 @@ import { GET_PROFILE, PROFILE_LOADING, CLEAR_CURRENT_PROFILE } from '../actions/
 
 const initialState = {
   profile: null,
-  profiles: [],
+  profiles: null,
   loading: false
 }
 
