@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/profileActions';
 import { Link } from 'react-router-dom';
+import ProfileActions from './ProfileActions';
 
 import Spinner from '../common/Spinner';
 
@@ -22,7 +23,14 @@ class Dashboard extends Component {
     } else {
       //Check if logged in user has profile data
       if(Object.keys(profile).length > 0){
-        dashboardContent = <h4> TODO: Display Profile </h4>
+        dashboardContent = (
+          <div>
+             <p className="lead text-muted">
+              Welcome, { } <Link to={`/profile/${profile.handle}`}>{ user.name } </Link>
+            </p>
+            <ProfileActions />
+          </div>
+        )
       } else {
         //User is logged in but has no profile
         dashboardContent = (
