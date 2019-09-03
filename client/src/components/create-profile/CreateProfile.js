@@ -143,7 +143,7 @@ class CreateProfile extends Component {
                 <small className="d-block pb-3">*require = required fields </small>
                 <form onSubmit={this.onSubmit}>
                   <TextFieldGroup
-                    placeholder="Profile Handle"
+                    placeholder="* Profile Handle"
                     name="handle"
                     value={this.state.handle}
                     onChange={this.onChange}
@@ -151,7 +151,7 @@ class CreateProfile extends Component {
                     info="A unique handle for your profile URL."
                   />
                   <SelectListGroup
-                    placeholder="Status"
+                    placeholder="* Status"
                     name="status"
                     value={this.state.status}
                     onChange={this.onChange}
@@ -184,7 +184,7 @@ class CreateProfile extends Component {
                     info="City or State"
                   />
                   <TextFieldGroup
-                    placeholder="Skills"
+                    placeholder="* Skills"
                     name="skills"
                     value={this.state.skills}
                     onChange={this.onChange}

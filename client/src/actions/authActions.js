@@ -10,7 +10,6 @@ export const registerUser = (userData, history) => dispatch => {
     .post('http://localhost:4000/api/users/register', userData)
     .then(res => history.push('/login'))
     .catch(err => {
-      console.log(err)
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data
@@ -33,7 +32,7 @@ export const loginUser = (userData) => dispatch => {
 
       //Decode token to get user data
       const decoded = jwt_decode(token);
-      console.log(decoded)
+      // console.log(decoded)
       //Set current user
       dispatch(setCurrentUser(decoded));
     })
