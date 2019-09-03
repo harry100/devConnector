@@ -5,15 +5,13 @@ const ProfileActions = () => {
   return(
     <div className="btn-group mb-4" role="group">
       <Link to="/edit-profile" className="btn btn-light">
-        <i class="fas fa-user"></i>
+        <img src="/images/user.svg" alt="user" style={{height: "15px", width: "15px", marginRight: "10px"}} /> Edit Profile
       </Link>
       <Link to="/add-experience" className="btn btn-light">
-        <i className="fab fa-black-tie text-info mr-1" />
-        Add Experience
+        <img src="/images/suitcase.svg" alt="user" style={{height: "15px", width: "15px", marginRight: "10px"}} /> Add Experience
       </Link>
       <Link to="/add-education" className="btn btn-light">
-        <i className="fas fa-graduation-cap text-info mr-1" />
-        Add Education
+        <img src="/images/mortarboard.svg" alt="user" style={{height: "15px", width: "15px", marginRight: "10px"}} />Add Education
       </Link>
     </div>
   )
