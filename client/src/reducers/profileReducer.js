@@ -14,19 +14,19 @@ export default function(state=initialState, action){
         loading: true
       }
     case GET_PROFILE:
-      return{
+      return {
         ...state,
         profile: action.payload,
         loading: false
       }
     case GET_PROFILES:
-      return{
+      return {
         ...state,
         profiles:  action.payload,
         loading: false
       }
     case CLEAR_CURRENT_PROFILE:
-      return{
+      return {
         ...state,
         profile: null
       }
