@@ -14,7 +14,7 @@ import {
 export const getCurrentProfile = () => dispatch => {
   dispatch(setProfileLoading());
   axios
-    .get('http://localhost:4000/api/profile')
+    .get('/api/profile')
     .then(response => {
       console.log(response)
       dispatch({
@@ -26,6 +26,26 @@ export const getCurrentProfile = () => dispatch => {
       dispatch({
         type: GET_PROFILE,
         payload: {}
+      })
+    })
+}
+
+//Get profile by handle
+export const getProfileByHandle = (handle) => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get(`/api/profile/handle/${handle}`)
+    .then(response => {
+      console.log(response)
+      dispatch({
+        type: GET_PROFILE,
+        payload: response.data
+      })
+    })
+    .catch(error => {
+      dispatch({
+        type: GET_PROFILE,
+        payload: null
       })
     })
 }
