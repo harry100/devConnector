@@ -20,6 +20,7 @@ import CreateProfile from './components/create-profile/CreateProfile';
 import EditProfile from './components/edit-profile/EditProfile';
 import AddExperience from './components/add-credentials/AddExperience';
 import AddEducation from './components/add-credentials/AddEducation';
+import Profiles from './components/profiles/Profiles';
 
 import './App.css';
 
@@ -55,6 +56,7 @@ function App() {
           <div className="container">
             <Route path='/register' exact component={Register} />
             <Route path='/login' exact component={Login} />
+            <Route path='/profiles' exact component={Profiles} />
             <Switch>
               <PrivateRoute path='/dashboard' exact component={Dashboard} />
             </Switch>
