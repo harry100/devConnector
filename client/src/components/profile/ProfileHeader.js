@@ -34,6 +34,7 @@ class ProfileHeader extends Component {
                     className="text-white p-2"
                     href={profile.website}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src="/images/domain.svg" style={{height: "37px", width: "37px"}} alt="domain"/>
                   </a>
@@ -44,6 +45,7 @@ class ProfileHeader extends Component {
                     className="text-white p-2"
                     href={profile.social.twitter}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src="/images/twitter-logo-button.svg" style={{height: "37px", width: "37px"}} alt="twitter"/>
                   </a>
@@ -54,6 +56,7 @@ class ProfileHeader extends Component {
                     className="text-white p-2"
                     href={profile.social.facebook}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src="/images/facebook-logo-button.svg" style={{height: "37px", width: "37px"}} alt="facebook"/>
                   </a>
@@ -64,6 +67,7 @@ class ProfileHeader extends Component {
                     className="text-white p-2"
                     href={profile.social.linkedin}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src="/images/linkedin-logo-button.svg" style={{height: "37px", width: "37px"}} alt="linkedin"/>
                   </a>
@@ -74,6 +78,7 @@ class ProfileHeader extends Component {
                     className="text-white p-2"
                     href={profile.social.youtube}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src="/images/youtube-logo-button.svg" style={{height: "37px", width: "37px"}} alt="youtube"/>
                   </a>
@@ -84,6 +89,7 @@ class ProfileHeader extends Component {
                     className="text-white p-2"
                     href={profile.social.instagram}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src="/images/instagram-logo-button.svg" style={{height: "37px", width: "37px"}} alt="instagram"/>
                   </a>
