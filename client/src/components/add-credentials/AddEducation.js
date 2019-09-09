@@ -16,7 +16,7 @@ class AddEducation extends Component {
       from: '',
       to: '',
       current: false,
-      descrition: '',
+      description: '',
       errors: {},
       disabled: false
     };
@@ -42,7 +42,7 @@ class AddEducation extends Component {
       from: this.state.from,
       to: this.state.to,
       current: this.state.current,
-      descrition: this.state.descrition
+      description: this.state.description
     };
 
     this.props.addEducation(expData, this.props.history);
@@ -124,15 +124,15 @@ class AddEducation extends Component {
                     id="current"
                   />
                   <label htmlFor="current" className="form-check-label">
-                    Current Job
+                    Currently studying here?
                   </label>
                 </div>
                 <TextAreaFieldGroup
                   placeholder="Program Description"
-                  name="descrition"
-                  value={this.state.descrition}
+                  name="description"
+                  value={this.state.description}
                   onChange={this.onChange}
-                  error={errors.descrition}
+                  error={errors.description}
                   info="Tell us a little about the program that you were in"
                 />
                 <input type="submit" value="Submit" className="btn btn-info btn-block mt-4" />
