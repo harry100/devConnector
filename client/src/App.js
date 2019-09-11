@@ -22,6 +22,7 @@ import AddExperience from './components/add-credentials/AddExperience';
 import AddEducation from './components/add-credentials/AddEducation';
 import Profiles from './components/profiles/Profiles';
 import Profile from   './components/profile/Profile';
+import Posts from './components/posts/Posts';
 import NotFound from './components/not-found/NotFound';
 
 import './App.css';
@@ -74,6 +75,9 @@ function App() {
             </Switch>
             <Switch>
               <PrivateRoute path='/add-education' exact component={AddEducation} />
+            </Switch>
+            <Switch>
+              <PrivateRoute path='/feed' exact component={Posts} />
             </Switch>
             <Route path='/not-found' exact component={NotFound} />
           </div>
