@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
     "axios": "^0.18.0",
+    "babel-jest": "^24.9.0",
     "font-awesome": "^4.7.0",
+    "jest-styled-components": "^6.3.3",
     "jwt-decode": "^2.2.0",
     "moment": "^2.24.0",
     "react": "^16.8.6",
@@ -21,7 +25,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,5 +44,11 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4000"
+  "proxy": "http://localhost:4000",
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.9.0"
+  }
 }
